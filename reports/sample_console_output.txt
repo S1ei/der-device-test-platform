@@ -1,0 +1,39 @@
+===============================================
+ DER Device Test & Compliance Simulator (C++)
+===============================================
+Educational test platform for simulated DER devices.
+It does NOT claim certification or conformance with any real standard.
+
+================ TEST RESULTS ================
+[PASS] SIM-INV-001 | Export limit tracking
+       Expected: 5.00 kW +/- 0.10 kW
+       Actual:   4.98 kW
+[PASS] SIM-INV-001 | Reject export limit above device rating
+       Expected: Command rejected (> 10.00 kW rating)
+       Actual:   Rejected
+[PASS] SIM-INV-001 | Demo over-voltage fault response
+       Expected: FAULTED and 0.00 kW above configured demo threshold
+       Actual:   FAULTED, 0.00 kW
+[PASS] SIM-INV-001 | Telemetry published to Modbus-style register map
+       Expected: Register 102 = 0 W while faulted
+       Actual:   0 W
+[PASS] SIM-INV-001 | Communication loss handling
+       Expected: Command rejected and status COMM_LOST
+       Actual:   Rejected, COMM_LOST
+[PASS] SIM-BAT-001 | Discharge setpoint and SOC update
+       Expected: 3.00 kW discharge; SOC decreases after 1 simulated minute
+       Actual:   3.00 kW, SOC 49.63%
+[PASS] SIM-BAT-001 | Reject battery power above rating
+       Expected: 8.00 kW command rejected (> 5.00 kW max discharge)
+       Actual:   Rejected
+[PASS] SIM-EVSE-001 | Current limit tracking
+       Expected: 16.00 A +/- 0.20 A
+       Actual:   15.90 A, 3.66 kW
+[PASS] SIM-EVSE-001 | Reject EV charger current above rating
+       Expected: 40.00 A command rejected (> 32.00 A rating)
+       Actual:   Rejected
+----------------------------------------------
+Passed: 9  Failed: 0  Total: 9
+Overall: PASS
+==============================================
+CSV report written to: reports/sample_test_results.csv

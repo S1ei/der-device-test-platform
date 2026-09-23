@@ -1,0 +1,6 @@
+build/
+der_test_platform
+der_test_platform.exe
+*.o
+.vscode/
+reports/test_results.csv

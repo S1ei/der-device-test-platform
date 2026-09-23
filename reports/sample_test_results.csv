@@ -1,0 +1,10 @@
+device,test,expected,actual,result
+"SIM-INV-001","Export limit tracking","5.00 kW +/- 0.10 kW","4.98 kW",PASS
+"SIM-INV-001","Reject export limit above device rating","Command rejected (> 10.00 kW rating)","Rejected",PASS
+"SIM-INV-001","Demo over-voltage fault response","FAULTED and 0.00 kW above configured demo threshold","FAULTED, 0.00 kW",PASS
+"SIM-INV-001","Telemetry published to Modbus-style register map","Register 102 = 0 W while faulted","0 W",PASS
+"SIM-INV-001","Communication loss handling","Command rejected and status COMM_LOST","Rejected, COMM_LOST",PASS
+"SIM-BAT-001","Discharge setpoint and SOC update","3.00 kW discharge; SOC decreases after 1 simulated minute","3.00 kW, SOC 49.63%",PASS
+"SIM-BAT-001","Reject battery power above rating","8.00 kW command rejected (> 5.00 kW max discharge)","Rejected",PASS
+"SIM-EVSE-001","Current limit tracking","16.00 A +/- 0.20 A","15.90 A, 3.66 kW",PASS
+"SIM-EVSE-001","Reject EV charger current above rating","40.00 A command rejected (> 32.00 A rating)","Rejected",PASS
