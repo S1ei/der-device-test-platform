@@ -146,9 +146,15 @@ ZECO_DER_Test_Platform_v2/
 └── reports/
 ```
 
-## Interview explanation
+## Project overview
 
-> “I built a C++ automated test platform for simulated DER devices. The second version moves beyond fixed outputs by using time-step dynamic models: the inverter and EV charger follow first-order responses, while the battery updates state of charge from power, elapsed time and efficiency. I then inject abnormal conditions such as over-voltage and communications loss and automatically compare actual behaviour with expected behaviour. Results are written to CSV, including an inverter step response that can be analysed separately.”
+This project is a C++17 automated test platform for simulated distributed energy resource (DER) devices, including an inverter, battery and EV charger.
+
+The simulator uses time-step dynamic models rather than instantaneous outputs. The inverter and EV charger follow simplified first-order responses, while the battery state of charge is updated using power, elapsed time and charge/discharge efficiency.
+
+The test framework applies normal operating commands as well as abnormal conditions such as over-voltage, communications loss and commands outside device ratings. Actual device behaviour is automatically compared against expected behaviour, with PASS/FAIL results written to CSV files.
+
+The project is intended to demonstrate C++ programming, automated testing and simplified electrical engineering modelling rather than replicate a complete commercial DER control or compliance-testing system.
 
 ## Honest scope
 
